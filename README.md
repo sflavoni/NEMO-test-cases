@@ -4,12 +4,13 @@
 This repository contains information as to how to run idealized demonstration case with NEMO.
 
 
-# How to run lock exchange experiment :
+# How to run test cases :
 
-or better: see how to download & compile nemo here: official doc.... BLA BLA BLA
-install NEMO from scratch
+# How to download & compile test cases in NEMO release
 
-PRE-REQUIRED: XIOS needed for input/output for NEMO code
+## install NEMO from scratch
+
+## PRE-REQUIRED: XIOS needed for input/output for NEMO code
 
 * **download & compile XIOS code : **
 > svn co http://forge.ipsl.jussieu.fr/ioserver/svn/XIOS/trunk xios-2.0
