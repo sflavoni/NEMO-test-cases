@@ -48,8 +48,7 @@ The list of these 4 cases is available in NEMOGCM/CONFIG/TEST_CASES directory :
 - LOCK_EXCHANGE
 - OVERFLOW
 - WAD (Wetting&Dry)
- 
- 
+
 ###COMPILE TEST CASES 
  
 * compile TEST\_CASES (example here the LOCK_EXCHANGE) : 
