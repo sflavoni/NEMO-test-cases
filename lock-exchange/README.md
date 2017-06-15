@@ -18,60 +18,29 @@ Here, the numerical mixing of the first-order upstream (UBS) and the FCT2 and FC
 
 <img src="./figures/start-lock-exchange.001.jpeg">
 
-** Choice done for ALL experiments is :**
+<b> Choice done for ALL experiments is :</b>
 
-- laplacian lateral diffusion on momentum (see namelist block: "namdyn_ldf")
-- horizontal direction (see namelist block: "namdyn_ldf" ln_dynldf_hor=.true.)
-- with coefficient 0.01 (see namelist block: "namdyn_ldf" coefficient rn_ahm_0)
+- **laplacian lateral diffusion on momentum** (see namelist block: "namdyn_ldf")
+- **horizontal direction** (see namelist block: "namdyn_ldf" ln_dynldf_hor=.true.)
+- **with coefficient 0.01** (see namelist block: "namdyn_ldf" coefficient rn_ahm_0)
 
-Some informations of LOCK_EXCHANGE test case experiments
-
- In EXP00 directory there is available some namelists :
-These namelists have same blocks of namelist_ref with choice of:
-- tracer advection scheme = **FCT2** or **FCT4**
- - FCT2 = COMPACT 2nd order on horizontal and vertical
- - FCT4 = COMPACT 4th order on horizontal and vertical
-- form of the momentum advectionvector = **flux** or **form**
-- momentum advection scheme = **cen2** or **ubs**
- - cen2 = 2nd order centered scheme
- - ubs = 3rd order UBS scheme
-- ln_dynvor_ene = .false. !  enstrophy conserving scheme
-- ln_dynvor_ens = .true.  !  energy conserving scheme
-- ln_dynvor_mix = .false. !  mixed scheme
-- ln_dynvor_een = .false. !  energy & enstrophy scheme
+You've download, installed and compiled LOCK_EXCHANGE test cases. The executable opa in TEST_CASES/LOCK_EXCHANGE/EXP00 directory
 
 
-* **compile LOCK EXCHANGE test case :  **
-> 
-cd NEMOGCM/CONFIG
-<br> ./makenemo -a TEST_CASES -n 'MY_LOCK_EXCHANGE' -r LOCK_EXCHANGE -m macport_osx 
-compile LOCK EXCHANGE test case :
-
-* **download revision 8097 of NEMO : **
-> 
-mkdir MY_TEST 
-<br> cd MY_TEST 
-<br> svn --username 'mylogin' co http://forge.ipsl.jussieu.fr/nemo/svn/trunk/NEMOGCM NEMOGCM -r 8097
-
-
-Now you've an executable opa in TEST_CASES/LOCK_EXCHANGE/EXP00 directory
-
-
-# First experiment :
+# First experiment EXP01:
 
 * **COPY EXP00 directory in EXP01 :**
-> cd TEST_CASES/MY_LOCK_EXCHANGE
-<br>cp -R EXP00 EXP01
 
+> cd TEST\_CASES/MY\_LOCK\_EXCHANGE
+ <br>cp -R EXP00 EXP01
 
 in NEMOGCM/CONFIG/TEST_CASES/MY_LOCK_EXCHANGE/EXP01 directory there are some namelists available: 
 
-choice the *namelist_FCT4_vect_ens_cfg* one and link it into the namelist_cfg (read by opa):
+choice the *namelist\_FCT4\_vect\_ens\_cfg* one and link it into the namelist_cfg (read by opa):
+> ln -sf namelist\_FCT4\_vect\_ens\_cfg namelist_cfg
 
-** ln -sf namelist_FCT4_vect_ens_cfg namelist_cfg **
 
-
-## EXP1 :  choice of  namelist_FCT4_vect_ens_cfg :
+## EXP1 : choice of namelist\_FCT4\_vect\_ens\_cfg :
 - **FCT4** Advection scheme: FCT (flux-corrected transport scheme) 4th order on horizontal and vertical
 - **vect** Vector formulation of the momentum advection
 - **ens** Vorticity energy conserving scheme
@@ -80,6 +49,6 @@ choice the *namelist_FCT4_vect_ens_cfg* one and link it into the namelist_cfg (r
 > mpirun -np 1 ./opa
 
 
-* You'll have the output file **"LOCK_FCT4_vect_ens_grid_T.nc"**
-> output file name is set in EXP01/file_def_nemo-opa.xml
+* You'll have the output file **"LOCK\_FCT4\_vect\_ens\_grid\_T.nc"**
+> output file name is set in EXP01/file\_def\_nemo-opa.xml
 <br> in variable name="@expname@"
