@@ -40,7 +40,7 @@ NOW XIOS is installed and compiled.
  <br> svn --username 'mylogin' co http://forge.ipsl.jussieu.fr/nemo/svn/trunk/NEMOGCM NEMOGCM_r8097 -r 8097
 
 
-**In NEMO official repository there are 4 demonstration cases :**
+<b>In NEMO official repository there are 4 demonstration cases : </b>
 
 The list of these 4 cases is available in NEMOGCM/CONFIG/TEST_CASES directory :
 
