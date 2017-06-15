@@ -1,41 +1,59 @@
 
 # NEMO Demonstration Cases
 
-This repository contains information as to how to run idealized demonstration case with NEMO.
+This repository contains information as to how to run idealized demonstration case within NEMO.
 
 
-# How to run test cases :
+# How to run test cases in NEMO release 8097 :
 
-# How to download & compile test cases in NEMO release
+* create your own directory in which you want to download & compile NEMO
 
-## install NEMO from scratch
+> mkdir TEST\_CASES_NEMO 
 
-## PRE-REQUIRED: XIOS needed for input/output for NEMO code
+## XIOS needed for input/output for NEMO code: download and compile xios :
+ 
+XIOS is tool for NEMO Inputs/Outputs, developped outside NEMO. 
 
-* **download & compile XIOS code : **
+* create directory in which you want to download & compile XIOS
+ 
+> mkdir ~/XIOS; cd ~/XIOS
+  
+* download & compile **XIOS** code : 
+ 
 > svn co http://forge.ipsl.jussieu.fr/ioserver/svn/XIOS/trunk xios-2.0
 <br> cd xios-2.0
-<br> ./make_xios --help  (to choice your compiler)
-<br> ./make_xios --arch CC_MACOSX --jobs 8
+<br> ./make\_xios --help  (to choice your compiler)
+<br> example: ./make\_xios --arch CC_MACOSX --jobs 8
+  
+<i> N.B. Into the xios-2.0/arch directory there is a list of files created for some architectures, that can be used like example, to create your own. Check version and PATH of compilers on your machine</i>
 
+NOW XIOS is installed and compiled.
 
-* **download revision 8097 of NEMO : **
-> 
-mkdir MY_TEST 
-<br> cd MY_TEST 
-<br> svn --username 'mylogin' co http://forge.ipsl.jussieu.fr/nemo/svn/trunk/NEMOGCM NEMOGCM_r8097 -r 8097
+## Install NEMO from scratch
+<i> You need to have a login to download NEMO code. If you need one go to the NEMO web site</i>
 
+* download revision 8097 of **NEMO** : 
 
-In EXP00 directory there is available some namelists :
-These namelists have same blocks of namelist_ref with choice of:
-- tracer advection scheme = **FCT2** or **FCT4**
- - FCT2 = COMPACT 2nd order on horizontal and vertical
- - FCT4 = COMPACT 4th order on horizontal and vertical
-- form of the momentum advectionvector = **flux** or **form**
-- momentum advection scheme = **cen2** or **ubs**
- - cen2 = 2nd order centered scheme
- - ubs = 3rd order UBS scheme
-- ln_dynvor_ene = .false. !  enstrophy conserving scheme
-- ln_dynvor_ens = .true.  !  energy conserving scheme
-- ln_dynvor_mix = .false. !  mixed scheme
-- ln_dynvor_een = .false. !  energy & enstrophy scheme
+  > cd TEST\_CASES\_NEMO
+ <br> mkdir MY\_TEST 
+ <br> cd MY\_TEST 
+ <br> svn --username 'mylogin' co http://forge.ipsl.jussieu.fr/nemo/svn/trunk/NEMOGCM NEMOGCM_r8097 -r 8097
+ 
+**In NEMO official repository there are 4 demonstration cases :**
+
+The list of these 4 cases is available in NEMOGCM/CONFIG/TEST_CASES directory :
+
+- ISOMIP
+- LOCK_EXCHANGE
+- OVERFLOW
+- WAD (Wetting&Dry)
+ 
+###COMPILE TEST CASES 
+ 
+* compile TEST\_CASES (example here the LOCK_EXCHANGE) : 
+
+ > cd MY\_TEST/NEMOGCM/CONFIG
+ <br> ./makenemo -a TEST_CASES -n my\_LOCK\_EXCHANGE -r LOCK\_EXCHANGE -m your\_arch\_file
+  
+
+Now TEST CAS "LOCK_EXCHANGE" code is installed and compiled. 
