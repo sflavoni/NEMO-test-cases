@@ -38,7 +38,8 @@ NOW XIOS is installed and compiled.
  <br> mkdir MY\_TEST 
  <br> cd MY\_TEST 
  <br> svn --username 'mylogin' co http://forge.ipsl.jussieu.fr/nemo/svn/trunk/NEMOGCM NEMOGCM_r8097 -r 8097
- 
+
+
 **In NEMO official repository there are 4 demonstration cases :**
 
 The list of these 4 cases is available in NEMOGCM/CONFIG/TEST_CASES directory :
@@ -47,6 +48,7 @@ The list of these 4 cases is available in NEMOGCM/CONFIG/TEST_CASES directory :
 - LOCK_EXCHANGE
 - OVERFLOW
 - WAD (Wetting&Dry)
+ 
  
 ###COMPILE TEST CASES 
  
