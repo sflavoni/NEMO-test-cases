@@ -15,7 +15,6 @@ At t = 0, the separation is removed such that the dense water is forced under th
 Earth rotation, bed friction and mixing are neglected, such that the effective density mixing is only due to advection of density.
 
 Here, the numerical mixing of the first-order upstream (UBS) and the FCT2 and FCT4 schemes will be assessed.
-
 <img src="./figures/start-lock-exchange.001.jpeg">
 
 ##Compile TEST CASES 
