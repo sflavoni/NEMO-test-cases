@@ -70,7 +70,8 @@ The list of these 5 cases is available in NEMOGCM/CONFIG/TEST_CASES directory :
 
 # How to run demonstration cases in NEMO 
 
-* Install NEMO from scratch
+### Here a description on How To Download/Compile/Run NEMO (you can skip this part if you already know it)
+
 
 * Create your own directory in which you want to download & compile NEMO
 
