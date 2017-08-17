@@ -20,7 +20,7 @@ Here, numerical mixing of the second-order FCT2 and fortht-order FCT4 schemes wi
 <img src="./figures/start-lock-exchange.001.jpeg">
 <br>
 
-##HOW TO Compile TEST CASES 
+## HOW TO Compile TEST CASES 
  
 * compile LOCK_EXCHANGE test case : 
 
