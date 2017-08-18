@@ -3,18 +3,18 @@
 Here a description of the test case + link toward the src and notebooks. 
 <br>
 <span style="color:red"> 
-The LOCK EXCHANGE experiment has been suggested by Haidvogel and Beckmann (1999) as a test case for advection schemes in ocean models, and has been intensively used by Burchard and Bolding (2002) for testing the advection schemes in GETM.
+The LOCK EXCHANGE experiment has been suggested by Haidvogel and Beckmann (1999) as a test case for advection schemes in ocean models, and has been intensively used by Burchard and Bolding (2002) for testing the advection schemes in GETM. Here we set experiment like Ilıcak, M. et al. "Spurious dianeutral mixing and the role of momentum closure", Ocean Modelling , 45-46, 37-58, 2012
 
 <span style="color:red"> 
 TO CHECK IF IT IS OK!!!!
 
-**This experiment is created and tested for NEMO code at revision 8097**
+This experiment is **created and tested** for NEMO **code at revision 8097**
 
 ## Objectives
 
 The LOCK EXCHANGE experiment can be use to see the impact of different tracer advection schemes into spurious mixing. <br>
 Here there is a physical description of this experiment, and a notebook is available to show some possible analysis. <br>
-If you've already some outputs you can directly look at LOCK_EXCHANGE notebook.
+If you've already some outputs you can directly look at the notebook.
 
 ## Physical description
 
