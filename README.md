@@ -58,7 +58,7 @@ Once you have chosen the example you want to run, you are ready to compile the c
 --
 
 ## This is a tutorial for NEMO release 8097
-### In NEMO official repository (revision 8097) there are 4 demonstration cases : 
+### In NEMO official repository (revision 8097) there are 5 demonstration cases : 
 
 The list of these 5 cases is available in NEMOGCM/CONFIG/TEST_CASES directory :
 
@@ -116,8 +116,10 @@ svn --username 'mylogin' co http://forge.ipsl.jussieu.fr/nemo/svn/trunk/NEMOGCM 
 ### Compile NEMO
 <pre>
 cd NEMOGCM_r8097/CONFIG
-./makenemo -a TEST_CASES -n my_TEST_CASE -n <i>TEST_CASE_EXAMPLE</i> -m <i>your_ARCH_FILE</i>
+./makenemo -a TEST_CASES -n my_TEST_CASE -n <i>name_of_TEST_CASE</i> -m <i>your_ARCH_FILE</i>
 </pre>
 
-### Set of NEMO runs
+Now the TEST CASE code is installed and compiled. The executable is available in the corresponding (my_TEST_CASE)/EXP00 directory: "opa".
+
+### Set of runs
 If you want to run one of these test cases you can read README instructions in each corrisponding directory.

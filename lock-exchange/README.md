@@ -2,7 +2,13 @@
 
 Here a description of the test case + link toward the src and notebooks. 
 <br>
+<span style="color:red"> 
 The LOCK EXCHANGE experiment has been suggested by Haidvogel and Beckmann (1999) as a test case for advection schemes in ocean models, and has been intensively used by Burchard and Bolding (2002) for testing the advection schemes in GETM.
+
+<span style="color:red"> 
+TO CHECK IF IT IS OK!!!!
+
+**This experiment is created and tested for NEMO code at revision 8097**
 
 ## Objectives
 
@@ -12,28 +18,15 @@ If you've already some outputs you can directly look at LOCK_EXCHANGE notebook.
 
 ## Physical description
 
-For the lock exchange test case, a closed two-dimensional vertical domain with a constant depth of H = 20 m and a length of L = 64 km is considered. Initially, the left half of the domain (x < 32 km) has a density of σt = 5 kg m−3 and the right half of the domain (x ⩾ 32 km) has a density of σt = 0 kg m−3, separated by a vertical line.
-Initial surface elevation and velocity are zero.<br>
-At t = 0, the separation is removed such that the dense water is forced under the fresh water. Earth rotation, bed friction and mixing are neglected, such that the effective density mixing is only due to advection of density.
+For the lock exchange test case, a closed two-dimensional vertical domain with a constant depth of H = 20 m and a length of L = 64 km is considered. Initially, the left half of the domain (x < 32 km) has a density of σt = 5 kg m−3 and the right half of the domain (x ⩾ 32 km) has a density of σt = 0 kg m−3, separated by a vertical line (here salinity is constant = 35 psu). Initial surface elevation and velocity are zero.<br>
+At t = 0, the separation is removed such that the dense water is forced under the fresh water, and the system evolves for 17 hours. <br>
+Earth rotation, bed friction and mixing are neglected, such that the effective density mixing is only due to advection of density. 
 <br>
-Here, numerical mixing of the second-order FCT2 and fortht-order FCT4 schemes will be assessed.<br> 
-<img src="./figures/start-lock-exchange.001.jpeg">
-<br>
+In the notebook numerical mixing of the second-order FCT2 and fortht-order FCT4 schemes will be assessed.
 
-## HOW TO Compile TEST CASES 
- 
-* compile LOCK_EXCHANGE test case : 
+Here figure from Ilıcak, M. et al. "Spurious dianeutral mixing and the role of momentum closure", Ocean Modelling , 45-46, 37-58, 2012. <img src="./figures/start-lock-exchange.001.jpeg"><br>
 
-instructions availables for NEMO 4.0 
- 
-<pre>
-cd my_TEST/NEMOGCM/CONFIG
-./makenemo -a TEST_CASES -n <i>my_LOCK_EXCHANGE</i> -r LOCK_EXCHANGE -m <i>your_arch_file</i>
-</pre>
-
-<b> Now TEST CASE "LOCK_EXCHANGE" code is installed and compiled. </b>
-
-The executable <b>opa</b> in TEST\_CASES/LOCK\_EXCHANGE/EXP00 directory.<br>
+## How to set experiment
 NEMO code needs : 
 
 * <b>namelist_ref</b> : namelist of reference in which ALL parameters are declared
@@ -48,7 +41,6 @@ In EXP00 directory there are available also some pre-set namelist\_cfg with some
 - **with coefficient 0.01** (see namelist block: "namdyn_ldf" coefficient rn_ahm_0)
 
 ## Experiment:
-
 * Set of LOCK EXCHANGE run : <br>
 *  Choice of : FCT4 advection scheme, vector invariant form, energy conservation
 
@@ -74,4 +66,4 @@ NOTA: output file name is set into EXP00/<b>file_def_nemo-opa.xml</b>
 in variable <b>name="@expname@"</b>
 </pre>
 
-When output files are created see the notebook to start some analysis
+When output files are created see the notebook to start some analysis.
