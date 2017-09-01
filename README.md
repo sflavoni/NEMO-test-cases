@@ -36,26 +36,10 @@ can choise:
 </code>
 -->
 
-This repository contains information as to how to run demonstration case  <b> WITHIN </b> NEMO.
+This repository contains informations on how to run simple demonstration experiments with NEMO (hereafter called **NEMO demonstration cases**) and how to analyse their output. The full NEMO distribution indeed comes with a set of pre-configured demonstration cases. These example experiments are used during NEMO development and release process for testing particular code features. But they can also serve as a good introduction to running NEMO in idealized physical settings. 
 
---
-NEMO Example Experiments   (
-<span style="color:red"> 
-copied by MITgcm page: https://github.com/altMITgcm/MITgcm66h/blob/master/docs/examples/examples.rst ) 
-</style>
+Note that we here only discuss NEMO demonstration cases that are released within NEMO distribution and therefore supported by the NEMO Team. Information as to how to implement and distribute additional demonstration cases may be found [here](http://forge.ipsl.jussieu.fr/nemo/wiki/Users/TestCases) .... **TO BE COMPLETED**
 
-
-<span style="color:red"> To re-adapt better : </style>
-
-<span style="color:red">
-The full NEMO distribution comes with a set of pre-configured numerical experiments. Some of these example experiments are tests of individual parts of the model code, but many are fully fledged numerical simulations. Full tutorials exist for a few of the examples, and are documented in sections :xxxxxx.
-The other examples follow the same general structure as the tutorial examples. However, they only include brief instructions in a text file called  <i> README </i>.
-The examples are located in subdirectories under the directory <i> CONFIG/TEST_CASES </i>. 
-Each example is briefly described below. Full list of model examples.....
-Once you have chosen the example you want to run, you are ready to compile the code.
-</span>
-
---
 
 ## This is a tutorial for NEMO release 8097
 ### In NEMO official repository (revision 8097) there are 5 demonstration cases : 

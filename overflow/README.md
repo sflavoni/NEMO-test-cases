@@ -1,16 +1,11 @@
 # OVERFLOW demonstration case
 
-Here a description of the test case + link toward the src and notebooks. <br>
-The OVERFLOW experiment is inspired by the non-rotating overflow configuration similar to that described in Haidvogel and Beckmann (1999).
-It can be used to investigate the impact of topography on spurious mixing, here we set experiment like Ilıcak, M. et al. "Spurious dianeutral mixing and the role of momentum closure", Ocean Modelling , 45-46, 37-58, 2012
+We here provide a physical description of this experiment and additional details as to how to run this experiment within NEMO. This experiment is **created and tested** for NEMO **code at revision 8097**. 
 
-This experiment is **created and tested** for NEMO **code at revision 8097**
+A ipython notebook is also provided as a demonstration of possible analysis. If you have already run the NEMO experiment and want to analyse the resulting output, you can directly look at the notebook [here](https://github.com/lesommer/unofficial-nemo-test-cases-repository/blob/master/overflow/notebook/overflow_notebook.ipynb).
 
 ## Objectives
-
-The OVERFLOW experiment can be use to see the impact of different tracer advection schemes or vertical cooridnates into spurious mixing.
-Here there is a physical description of this experiment, and a notebook is available to show some possible analysis. <br>
-If you've already some outputs you can directly look at the notebook.
+The OVERFLOW experiment illustrates the impact of different choices of numerical schemes and/or subgrid closures on spurious interior mixing close to bottom topography. The OVERFLOW experiment is adapted from the non-rotating overflow configuration described in Haidvogel and Beckmann (1999) and further used by Ilıcak et al. (2012). 
 
 ## Physical description
 
@@ -21,11 +16,16 @@ The domain is a 2000 mdeep, two-dimensional (x-z) steep topographic slope initia
 This test case is directly analogous to Lock_Exchange, only now with a topographic slope down whichthe dense water flows. We hold the horizontal grid spacing constant at ∆x=1 km, and ∆z=20 m (100-layers). The vertical viscosity is held constant throughout the test suite at a value of 10−4m2/s. Initial surface elevation and velocity are zero. Salinity is constant ( at 35 psu ) and initial cold dense water ( temperature at 10°C ) on the shallow slope, and light warm water ( temperature at 20°C ) throughout the remainder of the domain.
 At t = 0, the separation is removed such that the dense water is forced under the fresh water, and the system evolves for 9 hours : 
 
-Here figure from Ilıcak, M. et al. "Spurious dianeutral mixing and the role of momentum closure", Ocean Modelling , 45-46, 37-58, 2012.
+Here figure from Ilıcak, M. et al. 2012.
 
 <img src="./figures/overflow_end.jpg">
 
 The left column shows the simulations three hours after the initial condition, and the right column shows snapshots after nine hours, with GOLD model. 
+
+## References
+
+Ilıcak, Mehmet, et al. "Spurious dianeutral mixing and the role of momentum closure." Ocean Modelling 45 (2012): 37-58.<br>
+Haidvogel, Dale B., and Aike Beckmann. Numerical ocean circulation modeling. Vol. 2. World Scientific, 1999. <br>
 
 ## How to set experiment
 
@@ -42,7 +42,7 @@ NEMO code needs :
 
 ## Experiment:
 
-* Set of LOCK EXCHANGE run : <br>
+* Set of OVERFLOW run : <br>
 * Choice of vertical cooridnates (z-partial cells or s-coordinates)
 * Choice of : FCT4 advection scheme, vector invariant form, energy conservation
 

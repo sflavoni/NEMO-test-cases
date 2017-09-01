@@ -2,29 +2,30 @@
 
 Here a description of the test case + link toward the src and notebooks. 
 <br>
-<span style="color:red"> 
-The LOCK EXCHANGE experiment has been suggested by Haidvogel and Beckmann (1999) as a test case for advection schemes in ocean models, and has been intensively used by Burchard and Bolding (2002) for testing the advection schemes in GETM. Here we set experiment like Ilıcak, M. et al. "Spurious dianeutral mixing and the role of momentum closure", Ocean Modelling , 45-46, 37-58, 2012
+We here provide a physical description of this experiment and additional details as to how to run this experiment within NEMO. This experiment is **created and tested** for NEMO **code at revision 8097**. 
 
-<span style="color:red"> 
-TO CHECK IF IT IS OK!!!!
-
-This experiment is **created and tested** for NEMO **code at revision 8097**
+A ipython notebook is also provided as a demonstration of possible analysis. If you have already run the NEMO experiment and want to analyse the resulting output, you can directly look at the notebook : [here](https://github.com/lesommer/unofficial-nemo-test-cases-repository/blob/master/lock-exchange/notebook/lock-notebook.ipynb).
 
 ## Objectives
 
-The LOCK EXCHANGE experiment can be use to see the impact of different tracer advection schemes into spurious mixing. <br>
-Here there is a physical description of this experiment, and a notebook is available to show some possible analysis. <br>
-If you've already some outputs you can directly look at the notebook.
+The LOCK EXCHANGE experiment is a classical fluid dynamics experiment that has been adapted by Haidvogel and Beckmann (1999) for testing advection schemes in ocean circulation models. It has been used by several authors including Burchard and Bolding (2002) and Ilıcak et al. (2012). The LOCK EXCHANGE experiment can in particulart illustrate the impact of different choices of numerical schemes and/or subgrid closures on spurious interior mixing. 
 
 ## Physical description
 
+NEMO LOCK EXCHANGE demonstration case follows the specifications of Illicak et al. (2012).<br>
 For the lock exchange test case, a closed two-dimensional vertical domain with a constant depth of H = 20 m and a length of L = 64 km is considered. Initially, the left half of the domain (x < 32 km) has a density of σt = 5 kg m−3 and the right half of the domain (x ⩾ 32 km) has a density of σt = 0 kg m−3, separated by a vertical line (here salinity is constant = 35 psu). Initial surface elevation and velocity are zero.<br>
 At t = 0, the separation is removed such that the dense water is forced under the fresh water, and the system evolves for 17 hours. <br>
 Earth rotation, bed friction and mixing are neglected, such that the effective density mixing is only due to advection of density. 
 <br>
 In the notebook numerical mixing of the second-order FCT2 and fortht-order FCT4 schemes will be assessed.
 
-Here figure from Ilıcak, M. et al. "Spurious dianeutral mixing and the role of momentum closure", Ocean Modelling , 45-46, 37-58, 2012. <img src="./figures/start-lock-exchange.001.jpeg"><br>
+ <img src="./figures/start-lock-exchange.001.jpeg"><br>
+ 
+## References
+
+Ilıcak, Mehmet, et al. "Spurious dianeutral mixing and the role of momentum closure." Ocean Modelling 45 (2012): 37-58.<br>
+Haidvogel, Dale B., and Aike Beckmann. Numerical ocean circulation modeling. Vol. 2. World Scientific, 1999. <br>
+
 
 ## How to set experiment
 NEMO code needs : 
