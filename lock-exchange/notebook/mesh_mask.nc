@@ -1,1 +1,0 @@
-/Users/sflod/DEVELOP_NEMO/TEST_CASE/paper_overflow/NEMOGCM/CONFIG/TEST_CASES/LOCK_EXCHANGE_paper/EXP00/mesh_mask.nc
