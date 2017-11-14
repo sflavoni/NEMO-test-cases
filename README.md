@@ -81,7 +81,7 @@ cd NEMOGCM/CONFIG
 If you want to run one of these test cases you can read README instructions here :
 
 
-[LOCK_EXCHANGE] (../lock-exchange/README.md)
+[LOCK_EXCHANGE](https://github.com/sflavoni/NEMO-test-cases/blob/master/lock-exchange/README.md)
 
 [OVERFLOW] (https://github.com/sflavoni/NEMO-test-cases/blob/master/isomip/README.md)
 
