@@ -72,16 +72,16 @@ mkdir my_TEST
 cd my_TEST 
 svn --username 'mylogin' co http://forge.ipsl.jussieu.fr/nemo/svn/trunk/NEMOGCM NEMOGCM
 cd NEMOGCM/CONFIG
-./makenemo -a TEST_CASES -n <i>my_TEST_CASE</i> -r <i>name_of_TEST_CASE</i> -m <i>your_ARCH_FILE</i>
+./makenemo -a TEST_CASES -n <i>name_of_test_case</i> -m <i>your_ARCH_FILE</i>
 
-( example ./makenemo -a TEST_CASES -n my_OVERFLOW -r OVERFLOW -m X64_ADA )
+( example ./makenemo -a TEST_CASES -n OVERFLOW -m X64_ADA )
 </pre>
 
 ### Set of runs
 If you want to run one of these test cases you can read README instructions here :
 
 
-[LOCK_EXCHANGE] (https://github.com/sflavoni/NEMO-test-cases/blob/master/lock-exchange/README.md)
+[LOCK_EXCHANGE] (../lock-exchange/README.md)
 
 [OVERFLOW] (https://github.com/sflavoni/NEMO-test-cases/blob/master/isomip/README.md)
 
