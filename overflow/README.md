@@ -2,7 +2,7 @@
 
 We here provide a physical description of this experiment and additional details as to how to run this experiment within NEMO. This experiment is **created and tested** for NEMO **code at revision 8097**. 
 
-A ipython notebook is also provided as a demonstration of possible analysis. If you have already run the NEMO experiment and want to analyse the resulting output, you can directly look at the notebook [here](https://github.com/lesommer/unofficial-nemo-test-cases-repository/blob/master/overflow/notebook/overflow_notebook.ipynb).
+A ipython notebook is also provided as a demonstration of possible analysis. If you have already run the NEMO experiment and want to analyse the resulting output, you can directly look at the notebook [here](https://github.com/sflavoni/NEMO-test-cases/blob/master/overflow/notebook/overflow_notebook.ipynb).
 
 ## Objectives
 The OVERFLOW experiment illustrates the impact of different choices of numerical schemes and/or subgrid closures on spurious interior mixing close to bottom topography. The OVERFLOW experiment is adapted from the non-rotating overflow configuration described in Haidvogel and Beckmann (1999) and further used by Ilıcak et al. (2012). 
