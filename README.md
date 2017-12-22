@@ -83,13 +83,13 @@ If you want to run one of these test cases you can read README instructions here
 
 [LOCK_EXCHANGE](https://github.com/sflavoni/NEMO-test-cases/blob/master/lock-exchange/README.md)
 
-[OVERFLOW](https://github.com/sflavoni/NEMO-test-cases/blob/master/isomip/README.md)
+[OVERFLOW](https://github.com/sflavoni/NEMO-test-cases/blob/master/overflow/README.md)
 
 [ISOMIP](https://github.com/sflavoni/NEMO-test-cases/blob/master/isomip/README.md)
 
-[WAD (Wetting & Dry)](https://github.com/sflavoni/NEMO-test-cases/blob/master/isomip/README.md)
+[WAD (Wetting & Dry)](https://github.com/sflavoni/NEMO-test-cases/blob/master/wetting_and_drying/README.md)
 
-[SAS_BIPER](https://github.com/sflavoni/NEMO-test-cases/blob/master/isomip/README.md)
+[SAS_BIPER](https://github.com/sflavoni/NEMO-test-cases/blob/master/sas_biperiodic/README.md)
 
 ### How to contribute and add new demontration case 
 
