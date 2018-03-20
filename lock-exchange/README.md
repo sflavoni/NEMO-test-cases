@@ -3,7 +3,7 @@ Here a description of the test case + link toward the src and notebooks.
 <br>
 We here provide a physical description of this experiment and additional details as to how to run this experiment within NEMO. This experiment is **created and tested** for NEMO **code at revision 8097**. 
 
-A ipython notebook is also provided as a demonstration of possible analysis. If you have already run the NEMO experiment and want to analyse the resulting output, you can directly look at the notebook : [here](https://github.com/lesommer/unofficial-nemo-test-cases-repository/blob/master/lock-exchange/notebook/lock-notebook.ipynb).
+A **ipython notebook is also provided** as a demonstration of possible analysis. If you have already run the NEMO experiment and want to analyse the resulting output, you can directly look at the notebook : **[here](https://github.com/lesommer/unofficial-nemo-test-cases-repository/blob/master/lock-exchange/notebook/lock-notebook.ipynb)**.
 
 ## Objectives
 The LOCK EXCHANGE experiment is a classical fluid dynamics experiment that has been adapted by Haidvogel and Beckmann (1999) for testing advection schemes in ocean circulation models. It has been used by several authors including Burchard and Bolding (2002) and Ilıcak et al. (2012). The LOCK EXCHANGE experiment can in particulart illustrate the impact of different choices of numerical schemes and/or subgrid closures on spurious interior mixing. <br>
