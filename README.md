@@ -51,6 +51,8 @@ Demonstration cases available in NEMO repository  are :
 - ISOMIP
 - WAD (Wetting & Dry)
 - SAS_BIPER
+- VORTEX
+- CANAL
 
 ### How to use demonstration cases in NEMO 
 
@@ -90,6 +92,11 @@ If you want to run one of these test cases you can read README instructions here
 [WAD (Wetting & Dry)](https://github.com/sflavoni/NEMO-test-cases/blob/master/wetting_and_drying/README.md)
 
 [SAS_BIPER](https://github.com/sflavoni/NEMO-test-cases/blob/master/sas_biperiodic/README.md)
+
+[VORTEX](https://github.com/sflavoni/NEMO-test-cases/blob/master/vortex/README.md)
+
+[CANAL](https://github.com/sflavoni/NEMO-test-cases/blob/master/canal/README.md)
+
 
 ### How to contribute and add new demontration case 
 

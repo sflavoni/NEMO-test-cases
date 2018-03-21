@@ -1,5 +1,4 @@
-
-# Isomip demonstration case
+# Vortex demonstration case
 Here a description of the test case + link toward the src and notebooks. 
 <br>
 We here provide a physical description of this experiment and additional details as to how to run this experiment within NEMO. This experiment is **created and tested** for NEMO **code at revision 8097**. 
