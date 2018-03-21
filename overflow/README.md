@@ -5,10 +5,11 @@ We here provide a physical description of this experiment and additional details
 A ipython notebook is also provided as a demonstration of possible analysis. If you have already run the NEMO experiment and want to analyse the resulting output, you can directly look at the notebook [here](https://github.com/sflavoni/NEMO-test-cases/blob/master/overflow/notebook/overflow_notebook.ipynb).
 
 ## Objectives
-The OVERFLOW experiment illustrates the impact of different choices of numerical schemes and/or subgrid closures on spurious interior mixing close to bottom topography. The OVERFLOW experiment is adapted from the non-rotating overflow configuration described in Haidvogel and Beckmann (1999) and further used by Ilıcak et al. (2012). 
+The OVERFLOW experiment illustrates the impact of different choices of numerical schemes and/or subgrid closures on spurious interior mixing close to bottom topography. The OVERFLOW experiment is adapted from the non-rotating overflow configuration described in Haidvogel and Beckmann (1999) and further used by Ilıcak et al. (2012). <br>
+Here we can assess the behaviour of the second-order tracer advection scheme FCT2 and fortht-order FCT4, with some exemple of python scripts into the notebook associated.
 
 ## Physical description
-
+NEMO OVERFLOW demonstration case follows the specifications of Illicak et al. (2012). <br>
 The domain is a 2000 mdeep, two-dimensional (x-z) steep topographic slope initialized with dense water on the shelf. The velocity field is initially at rest. A vertical density front with a 2 kg m−3 difference is located at x=20 km. There is initially no stratification in the off-shelfregion. The geometry and initial conditions are illustrated in figure:
 
 <img src="./figures/overflow_init.jpg">
@@ -22,54 +23,77 @@ Here figure from Ilıcak, M. et al. 2012.
 
 The left column shows the simulations three hours after the initial condition, and the right column shows snapshots after nine hours, with GOLD model. 
 
+### Exemple of run
+In this exemple we assess the behaviour of NEMO in overflow demonstration case with partial steps coordinates. We propose to run sensibility test using s-coordinates.<br>
+
+* The **Reference Simulation** : **zps** is the first simulation, in which partial steps are used.
+
+```
+cd TEST_CASES/OVERFLOW/EXP00
+ln -sf namelist_zps_FCT2_flux_ubs_cfg namelist_cfg
+```
+choice of vertical coordinate system is done in namusr_def block of namelist: 
+
+~~~fortran
+!-----------------------------------------------------------------------
+&namusr_def    !   User defined :   OVERFLOW configuration
+!-----------------------------------------------------------------------
+!                       !  type of vertical coordinate
+   ln_zco      = .false.      ! z-coordinate
+   ln_zps      = .true.       ! z-partial-step coordinate
+   ln_sco      = .false.      ! s-coordinate   
+   rn_dx       =   1000.   !  horizontal resolution   [meters]
+   rn_dz       =     20.   !  vertical   resolution   [meters]
+/
+~~~
+
+Run the executable : (if you haven't compiled NEMO see [here](https://github.com/sflavoni/NEMO-test-cases) )
+
+``` 
+ mpirun -np 1 ./opa 
+```
+Output files are: <br>
+
+~~~
+OVF_zps_FCT2_flux_ubs_grid_T.nc
+OVF_zps_FCT2_flux_ubs_grid_U.nc
+OVF_zps_FCT2_flux_ubs_grid_V.nc
+OVF_zps_FCT2_flux_ubs_grid_W.nc
+~~~
+
+* The **Sensibility Simulation** : **FCT4** is the sensibility test, in which Flux-Corrected Transport tracer advection scheme of 4th order is used.
+
+
+```
+ln -sf namelist_sco_FCT2_flux_ubs_cfg namelist_cfg
+```
+
+Run the executable again : 
+
+``` 
+ mpirun -np 1 ./opa 
+```
+
+Output files : <br>
+
+~~~
+OVF_sco_FCT2_flux_ubs_grid_T.nc
+OVF_sco_FCT2_flux_ubs_grid_U.nc
+OVF_sco_FCT2_flux_ubs_grid_V.nc
+OVF_sco_FCT2_flux_ubs_grid_W.nc
+~~~
+
+* You can change output file name  in variable @expname@ in file\_def\_nemo-opa.xml
+
+~~~xml
+<file_definition type="multiple_file" name="@expname@" sync_freq="10d" min_digits="4">
+~~~
+
+When output files are created see the notebook to start some analysis.
+
+* Available notebook python is  [here](https://github.com/sflavoni/NEMO-test-cases/blob/master/overflow/notebook/overflow_notebook.ipynb).
+
 ## References
 
 Ilıcak, Mehmet, et al. "Spurious dianeutral mixing and the role of momentum closure." Ocean Modelling 45 (2012): 37-58.<br>
 Haidvogel, Dale B., and Aike Beckmann. Numerical ocean circulation modeling. Vol. 2. World Scientific, 1999. <br>
-
-## How to set experiment
-
-NEMO code needs : 
-
-* <b>namelist_ref</b> : namelist of reference in which ALL parameters are declared
-* <b>namelist_cfg</b> : blocks of namelist of the specific configuration, in which you can set specific parameters. It need to be used to overwrite namelist\_ref blocks 
-
-<b> choice is done for ALL experiments for next parameters :</b>
-
-- **laplacian lateral diffusion on momentum** (see namelist block: "namdyn_ldf")
-- **horizontal direction** (see namelist block: "namdyn_ldf" ln_dynldf_hor=.true.)
-- **with coefficient 0.01** (see namelist block: "namdyn_ldf" coefficient rn_ahm_0)
-
-## Experiment:
-
-* Set of OVERFLOW run : <br>
-* Choice of vertical cooridnates (z-partial cells or s-coordinates)
-* Choice of : FCT4 advection scheme, vector invariant form, energy conservation
-
-in NEMOGCM/CONFIG/TEST_CASES/MY_OVERFLOW/EXP00 directory there are some namelists available: 
-
-## Description of namelist\_zps\_FCT4\_vect\_ens\_cfg :
-```
-ln -sf namelist_zps_FCT4_flux_cen2_cfg namelist_cfg
-```
-
-- **FCT4** Advection scheme: FCT (flux-corrected transport scheme) 4th order on horizontal and vertical
-- **flux** Invartiant Flux formulation of the momentum advection
-- **cen2** Second order scheme
-
-Run the executable :
-``` mpirun -np 1 ./opa ```
-
-Output files : <br>
-
-OVF\_FCT4\_vect\_ens\_grid\_T.nc, <br>
-OVF\_FCT4\_vect\_ens\_grid\_U.nc, <br>
-OVF\_FCT4\_vect\_ens\_grid\_V.nc, <br>
-OVF\_FCT4\_vect\_ens\_grid\_W.nc
-
-<pre>
-NOTA: output file name is set into EXP00/<b>file_def_nemo-opa.xml</b>
-in variable <b>name="@expname@"</b>
-</pre>
-
-When output files are created see the notebook to start some analysis.
