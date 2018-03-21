@@ -20,14 +20,15 @@ At t = 0, the separation is removed such that the dense water is forced under th
  
 
 ### Exemple of run
+In this exemple we assess the behaviour of the second-order tracer advection scheme FCT2. We propose to run sensibility test of tracer advection scheme in NEMO using FCT4 scheme.<br>
 
-Reference experience is a simulation in which we use Flux-Corrected Transport tracer advection scheme of 2th order  
+* The **Reference Simulation** : **FCT2** is the first simulation, in which Flux-Corrected Transport tracer advection scheme of 2th order is used.
 
 ```
 cd TEST_CASES/LOCK_EXCHANGE/EXP00
 ln -sf namelist_FCT2_vect_ens_cfg namelist_cfg
 ```
-choice done in namtra_adv block of namelist: 
+choice of tracer advection scheme is done in namtra_adv block of namelist: 
 
 ~~~fortran
 !-----------------------------------------------------------------------
@@ -44,8 +45,17 @@ Run the executable : (if you haven't compiled NEMO see [here](https://github.com
 ``` 
  mpirun -np 1 ./opa 
 ```
+Output files are: <br>
 
-Sensibility test changing tracer advection scheme with a 4th order Flux-Corrected Transport: FTC4
+~~~
+LOCK_FCT2_vect_ens_grid_T.nc
+LOCK_FCT2_vect_ens_grid_U.nc
+LOCK_FCT2_vect_ens_grid_V.nc
+LOCK_FCT2_vect_ens_grid_W.nc
+~~~
+
+* The **Sensibility Simulation** : **FCT4** is the sensibility test, in which Flux-Corrected Transport tracer advection scheme of 4th order is used.
+
 
 ```
 ln -sf namelist_FCT4_vect_ens_cfg namelist_cfg
@@ -71,6 +81,8 @@ LOCK_FCT4_vect_ens_grid_W.nc
 ~~~xml
 <file_definition type="multiple_file" name="@expname@" sync_freq="10d" min_digits="4">
 ~~~
+
+* Available notebook python is [here](https://github.com/lesommer/unofficial-nemo-test-cases-repository/blob/master/lock-exchange/notebook/lock-notebook.ipynb).
 
 ## References
 
